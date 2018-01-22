@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:55:28 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/15 15:41:31 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/01/22 11:54:16 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,4 @@ void	initialize_scene(t_scene *scene)
 	default_camera(&scene->camera);
 	init_hash_table(scene->hash);
 	initialize_intersection_fn_pointers(scene);
-	initialize_stats(&scene->stats);
 }

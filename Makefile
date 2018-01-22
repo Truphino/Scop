@@ -6,7 +6,7 @@
 #    By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/26 14:32:25 by dgaitsgo          #+#    #+#              #
-#    Updated: 2017/03/15 15:53:27 by trecomps         ###   ########.fr        #
+#    Updated: 2018/01/22 11:51:35 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,6 @@ SRC_FILES = \
 ./src/core/soft_shadow.c \
 ./src/core/sphere_inter.c \
 ./src/core/sphere_intersection.c \
-./src/core/stats.c \
 ./src/core/test_intersection.c \
 ./src/core/tone_mapping.c \
 ./src/core/transform.c \
