@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 13:55:38 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/12 11:41:57 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 15:32:03 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@
 # include <float.h>
 # include <time.h>
 # include <SDL2/SDL.h>
+# include "glew.h"
+# include <OpenGl/gl.h>
 
 #endif

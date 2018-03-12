@@ -6,7 +6,7 @@
 #    By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/26 14:32:25 by dgaitsgo          #+#    #+#              #
-#    Updated: 2018/03/12 12:18:42 by trecomps         ###   ########.fr        #
+#    Updated: 2018/03/12 15:31:25 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -190,7 +190,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
 	make -C ./lib/libft
-	gcc $(FLAGS) -o $(NAME) $(OBJ_FILES) -L$(LIB_DIR) -lft -F/Library/Frameworks -framework SDL2 -framework OpenGL
+	gcc $(FLAGS) -o $(NAME) $(OBJ_FILES) -L$(LIB_DIR) -lft -F/Library/Frameworks \
+		-framework SDL2 -framework OpenGL  -L./lib -lGLEW
 
 %.o:%.c $(INC_FILES)
 	gcc -c -I$(INC_DIR) $< -o $@
