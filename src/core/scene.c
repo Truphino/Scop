@@ -6,12 +6,12 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:55:28 by trecomps          #+#    #+#             */
-/*   Updated: 2018/01/22 11:54:16 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:23 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
-#include "ray_trace.h"
+#include "scope.h"
 
 void	initialize_intersection_fn_pointers(t_scene *scene)
 {

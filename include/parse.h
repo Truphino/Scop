@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 15:04:40 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/08 18:15:20 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:55:11 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define __PARSE_H
 # include "libft.h"
 # include "get_next_line.h"
-# include "ray_trace.h"
+# include "scope.h"
 # include "flags.h"
 
 enum	e_elements

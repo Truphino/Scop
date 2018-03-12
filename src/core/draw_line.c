@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/19 15:05:05 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:19 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 void		draw_line_down(t_bresenham b,
 							t_line line, t_vector color, t_window *window)

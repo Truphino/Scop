@@ -6,11 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 20:22:56 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/05 19:16:51 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:49 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 void		build_normal_to_world(t_matrix norm_to_world, t_transform t)
 {

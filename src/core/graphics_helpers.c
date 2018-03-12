@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/08 11:16:24 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:20 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 double		clamp(double x, double min_value, double max_value)
 {

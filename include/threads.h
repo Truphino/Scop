@@ -6,14 +6,14 @@
 /*   By: mdiarra <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/24 17:40:10 by mdiarra           #+#    #+#             */
-/*   Updated: 2017/03/08 11:44:01 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:55:13 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __THREADS_H
 # define __THREADS_H
 
-# include "ray_trace.h"
+# include "scope.h"
 # include <pthread.h>
 
 typedef struct

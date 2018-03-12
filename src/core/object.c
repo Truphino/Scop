@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/03 15:49:01 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:22 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 t_object			*new_object(int type)
 {

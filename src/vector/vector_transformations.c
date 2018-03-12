@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/07 16:10:02 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 11:01:15 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 t_vector		matrix_transform_raster_point(t_vector *pnt, t_matrix m)
 {

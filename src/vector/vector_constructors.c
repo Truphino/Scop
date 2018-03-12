@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/07 16:10:16 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 11:01:12 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 void		set_vector(t_vector *res, double x, double y, double z)
 {

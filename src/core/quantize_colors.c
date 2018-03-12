@@ -6,11 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/17 12:30:01 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/03 15:54:54 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:23 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 t_palette		**get_color_map_memory(void)
 {

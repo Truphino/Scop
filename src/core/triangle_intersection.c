@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/05 18:45:22 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:24 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 void	set_triangle_intersection_data(t_intersect_triangle it, t_ray obj_ray,
 										t_intersection *intersection)

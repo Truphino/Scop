@@ -6,14 +6,14 @@
 /*   By: trecomps <trecomps@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 10:51:49 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/08 11:49:31 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 12:13:32 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __WINDOW_H
 # define __WINDOW_H
 
-# include "ray_trace.h"
+# include "scope.h"
 # include "/Library/Frameworks/SDL2.framework/Versions/A/Headers/SDL.h"
 
 # define SDL_WINDOW			window->window
@@ -29,6 +29,7 @@
 
 typedef	struct		s_sdlwindow
 {
+	SDL_GLContext	gl_context;
 	SDL_Window		*window;
 	SDL_Surface		*screen;
 	SDL_Surface		*image;

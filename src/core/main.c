@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2018/01/22 11:53:01 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 11:13:24 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 #include "libft.h"
 #include "threads.h"
 #include "parse.h"
@@ -46,18 +46,18 @@ int			main(int argc, char **argv)
 {
 	t_scene		scene;
 
-	if (argc != 2 || !argv)
-		usage();
+//	if (argc != 2 || !argv)
+//		usage();
 	initialize_scene(&scene);
-	if (parse(argv[1], &scene))
+	if (1 || parse(argv[1], &scene))
 	{
 		initialize_window(&scene.window);
 		initialize_camera(&scene.camera, &scene.window);
-		build_light_matrices(&scene);
+		/*build_light_matrices(&scene);
 		init_view_matrices(&scene);
 		bound_entire_scene(&scene);
 		init_threading(&scene.window, &scene.camera, &scene);
-		post_processing(&scene);
+		post_processing(&scene);*/
 		put_image(&scene);
 	}
 	return (0);

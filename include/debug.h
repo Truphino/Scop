@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/20 09:41:46 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/08 10:50:30 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:55:09 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define CWHT   "\x1B[37m"
 # define CRESET "\x1B[0m"
 
-# include "ray_trace.h"
+# include "scope.h"
 
 void		debug_camera(char *title, t_camera *c);
 void		debug_triangle(char *title, t_triangle *t);

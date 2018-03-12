@@ -6,11 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 20:29:28 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/15 15:23:54 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:23 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 #include "threads.h"
 
 t_intersection	inter_scene(t_node *all, t_ray ray)

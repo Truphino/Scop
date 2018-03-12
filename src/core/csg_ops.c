@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 14:35:58 by trecomps          #+#    #+#             */
-/*   Updated: 2017/02/23 14:37:15 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:19 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 void		csg_intersection(int left, int right, t_scene_intersections *si)
 {

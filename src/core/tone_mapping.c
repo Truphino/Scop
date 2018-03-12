@@ -6,11 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/18 11:13:42 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/05 18:44:30 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:24 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 void			initialize_tone_map(t_tone_map *t)
 {

@@ -6,11 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 17:10:51 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/02/22 14:28:06 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:18 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 void		setup_cone_coefficients(t_quadratic *q,
 t_vector p, t_vector d)

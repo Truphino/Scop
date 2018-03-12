@@ -6,7 +6,7 @@
 #    By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/26 14:32:25 by dgaitsgo          #+#    #+#              #
-#    Updated: 2018/01/22 11:51:35 by trecomps         ###   ########.fr        #
+#    Updated: 2018/03/12 12:18:42 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ NAME = rt
 SRC_DIR = ./src
 OBJ_DIR = ./obs
 INC_DIR = ./include
-LIB_DIR = ./lib/libft
 
 SRC_FILES = \
+./src/core/init_opengl.c \
 ./src/core/affine_group.c \
 ./src/core/anti_aliasing.c \
 ./src/core/bound_entire_scene.c \
@@ -134,7 +134,8 @@ SRC_FILES = \
 ./src/vector/vector_scale.c \
 ./src/vector/vector_transformations.c \
 
-OBJ_FILES = $(SRC_FILES:.c=.o)
+OBJ_FILES = $(SRC_FILES:.c=.o) #$(addprefix $(OBJ_DIR)/,$(notdir $(SRC_FILES:.c=.o)))
+
 INC_FILES = \
 	./include/affine_group.h \
 	./include/bounding_box.h \
@@ -164,7 +165,7 @@ INC_FILES = \
 	./include/random.h \
 	./include/rasterize.h \
 	./include/ray.h \
-	./include/ray_trace.h \
+	./include/scope.h \
 	./include/refraction.h \
 	./include/rt_open_gl.h \
 	./include/shader.h \
@@ -179,6 +180,8 @@ INC_FILES = \
 	./include/vector.h \
 	./include/window.h \
 
+LIB_DIR = ./lib/libft
+
 FLAGS = -Wall -Wextra -Werror
 
 .PHONY: all, clean, fclean, re
@@ -186,15 +189,18 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
-	gcc $(FLAGS) -o $(NAME) $(OBJ_FILES) -L$(LIB_DIR) -lft -F/Library/Frameworks -framework SDL2
+	make -C ./lib/libft
+	gcc $(FLAGS) -o $(NAME) $(OBJ_FILES) -L$(LIB_DIR) -lft -F/Library/Frameworks -framework SDL2 -framework OpenGL
 
 %.o:%.c $(INC_FILES)
 	gcc -c -I$(INC_DIR) $< -o $@
 
 clean:
+	make -C ./lib/libft/ clean
 	rm -rf $(OBJ_FILES)
 
 fclean: clean
+	make -C ./lib/libft/ fclean
 	rm -rf $(NAME)
 
 re: fclean all

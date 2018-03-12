@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/21 15:33:09 by trecomps         ###   ########.fr       */
+/*   Updated: 2017/03/21 17:00:04 by dgaitsgo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ void	parse_light(char **tokens, int *i, int max, t_scene *scene)
 			scene->light[scene->n_lights]->transformation.translation;
 	}
 	else if (accept(tokens[*i], "color", i))
-	{
 		parse_vector(tokens, i, &light->color,
 		range(0, 255));
-	}
 	else
 		parse_error(UNEXPECTED_SYMBOL, tokens, i);
 	parse_light(tokens, i, max++, scene);

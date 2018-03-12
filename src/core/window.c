@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/07 16:00:56 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 12:39:54 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 t_vector		get_pixel_color(t_window *window, char *img, int x, int y)
 {
@@ -34,14 +34,14 @@ void			initialize_window(t_window *window)
 	SDL_BPL = SDL_WIDTH * (SDL_DEPTH / 8);
 	SDL_Init(SDL_INIT_VIDEO);
 	SDL_WINDOW = SDL_CreateWindow("ray tracing", 100, 200,
-	SDL_WIDTH, SDL_HEIGHT, 0);
-	SDL_SCREEN = SDL_GetWindowSurface(SDL_WINDOW);
+	SDL_WIDTH, SDL_HEIGHT, SDL_WINDOW_OPENGL);
 	SDL_FRAME_BUFFER = malloc(SDL_WIDTH * SDL_HEIGHT * 4);
-	SDL_IMAGE = SDL_CreateRGBSurfaceFrom(SDL_FRAME_BUFFER,
-	SDL_WIDTH, SDL_HEIGHT, SDL_DEPTH, SDL_BPL, 0, 0, 0, 0);
 	window->z_buffer = malloc(sizeof(double) * SDL_WIDTH * SDL_HEIGHT);
 	window->aspect_ratio = (double)SDL_WIDTH / (double)SDL_HEIGHT;
 	window->inverse_aspect_ratio = (double)SDL_HEIGHT / (double)SDL_WIDTH;
+	if ((window->gl_context = SDL_GL_CreateContext(SDL_WINDOW)) == NULL)
+		printf("Cannot init gl context");
+	init_opengl();
 }
 
 void			kill_sdl(t_scene *scene, char *str, int fd)
@@ -49,8 +49,7 @@ void			kill_sdl(t_scene *scene, char *str, int fd)
 	t_window	*window;
 
 	window = &scene->window;
-	SDL_FreeSurface(window->image);
-	SDL_FreeSurface(window->screen);
+	SDL_GL_DeleteContext(window->gl_context);
 	SDL_DestroyWindow(SDL_WINDOW);
 	SDL_Quit();
 	ft_putstr_fd(str, fd);
@@ -86,7 +85,6 @@ void			put_image(t_scene *scene)
 	t_window	*window;
 
 	window = &scene->window;
-	SDL_BlitSurface(SDL_IMAGE, NULL, SDL_SCREEN, NULL);
-	SDL_UpdateWindowSurface(SDL_WINDOW);
+	setGlColor(window, 0, 1, 1, 1);
 	poll_events(scene);
 }

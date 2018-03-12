@@ -6,11 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/05 18:30:04 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/15 15:32:08 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:20 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 void				add_inter(t_inter *inter, double t, int hit)
 {

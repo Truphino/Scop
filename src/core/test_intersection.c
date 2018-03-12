@@ -6,16 +6,17 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 15:35:47 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/01/22 11:54:34 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:24 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 #include "parse.h"
 
 int		test_intersection(t_scene *scene, t_object *object, t_ray ray,
 t_intersection *intersection)
 {
+	scene->stats.total_intersections++;
 	ray.z = REALLY_BIG;
 	if (object->type == TRIANGLE)
 		intersection->hit = intersect_triangle(ray, intersection);

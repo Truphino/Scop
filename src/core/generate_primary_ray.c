@@ -6,11 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 16:02:03 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/05 18:42:09 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:20 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 t_ray			generate_primary_ray(t_camera *camera, double x, double y)
 {

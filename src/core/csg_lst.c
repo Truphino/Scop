@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/19 15:05:33 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:18 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 t_scene_intersections	*csg_lst_add_union(t_scene_intersections *si,
 									t_inter add)

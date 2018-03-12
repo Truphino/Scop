@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 13:59:46 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/19 15:10:13 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 12:24:33 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@
 # include "rt_open_gl.h"
 # include "rasterize.h"
 # include "csg.h"
+# include "opengl.h"
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/19 20:25:35 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/02/22 14:28:06 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:22 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 #include "flags.h"
 
 int		clip_plane(t_vector o)

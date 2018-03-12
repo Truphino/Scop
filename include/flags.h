@@ -6,14 +6,14 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 10:52:05 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/15 15:26:31 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:55:09 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __FLAGS_H
 # define __FLAGS_H
 
-# include "ray_trace.h"
+# include "scope.h"
 
 # define BIT_SET(a,b) ((a) |= (1<<(b)))
 # define BIT_CLEAR(a,b) ((a) &= ~(1<<(b)))

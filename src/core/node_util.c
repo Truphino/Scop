@@ -6,11 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/05 18:31:31 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/15 15:22:59 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:22 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 void		free_node(t_node *node)
 {

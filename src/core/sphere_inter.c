@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/03 16:15:18 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:24 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 #include "flags.h"
 
 static void	set_up_sphere_coefficients(t_quadratic *q, t_vector d, t_vector p)

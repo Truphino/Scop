@@ -6,11 +6,11 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/03 15:34:40 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2017/03/03 15:35:45 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:22 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 
 void				p_noise_bump(t_intersection *intersection, t_scene *scene)
 {

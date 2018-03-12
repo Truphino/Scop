@@ -6,11 +6,11 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/03/08 15:50:28 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/12 10:57:17 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ray_trace.h"
+#include "scope.h"
 #include "threads.h"
 
 int				above_threshold(t_thread_aa e, t_vector color, int x, int y)
