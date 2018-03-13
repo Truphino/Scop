@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/05 18:49:24 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/03/12 12:34:35 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/13 13:01:08 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,26 @@ void			poll_events(t_scene *scene)
 			if (KEY == SDLK_s)
 				screen_shot(scene);
 			if (KEY == SDLK_r)
-				setGlColor(window, 1, 0, 0, 1);
+			{
+				glClearColor(1, 0, 0, 1);
+				glClear(GL_COLOR_BUFFER_BIT);
+				glDrawArrays(GL_TRIANGLES, 0, 6);
+				SDL_GL_SwapWindow(SDL_WINDOW);
+			}
 			if (KEY == SDLK_g)
-				setGlColor(window, 0, 1, 0, 1);
+			{
+				glClearColor(0, 1, 0, 1);
+				glClear(GL_COLOR_BUFFER_BIT);
+				glDrawArrays(GL_TRIANGLES, 0, 6);
+				SDL_GL_SwapWindow(SDL_WINDOW);
+			}
 			if (KEY == SDLK_b)
-				setGlColor(window, 0, 0, 1, 1);
+			{
+				glClearColor(0, 0, 1, 1);
+				glClear(GL_COLOR_BUFFER_BIT);
+				glDrawArrays(GL_TRIANGLES, 0, 6);
+				SDL_GL_SwapWindow(SDL_WINDOW);
+			}
 		}
 	}
 }

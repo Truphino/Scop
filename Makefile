@@ -6,7 +6,7 @@
 #    By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/26 14:32:25 by dgaitsgo          #+#    #+#              #
-#    Updated: 2018/03/12 15:31:25 by trecomps         ###   ########.fr        #
+#    Updated: 2018/03/13 11:59:26 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,11 @@ OBJ_DIR = ./obs
 INC_DIR = ./include
 
 SRC_FILES = \
-./src/core/init_opengl.c \
+./src/opengl/print_log.c\
+./src/opengl/exec_log.c\
+./src/opengl/error_log.c\
+./src/opengl/load_shaders.c\
+./src/opengl/init_opengl.c \
 ./src/core/affine_group.c \
 ./src/core/anti_aliasing.c \
 ./src/core/bound_entire_scene.c \
