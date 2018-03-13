@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/12 10:59:50 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/13 16:09:29 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,6 @@ void	update_bboxes(t_scene *scene, t_bbox bbox, int first_triangle)
 
 void	set_triangle(t_triangle *t, t_obj_data *od, t_affine_group *ag, int i)
 {
-	t->v0 = matrix_transform_point(&od->vertices[od->face_indexes[i]],
-	ag->transformation);
-	t->v1 = matrix_transform_point(&od->vertices[od->face_indexes[i + 1]],
-	ag->transformation);
-	t->v2 = matrix_transform_point(&od->vertices[od->face_indexes[i + 2]],
-	ag->transformation);
 }
 
 void	transform_and_push_mesh(t_scene *scene,

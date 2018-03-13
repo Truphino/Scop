@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 10:52:53 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/12 10:55:12 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/13 16:06:12 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 typedef struct				s_scene
 {
+	t_mesh					*mesh;
 	int						flags;
 	int						n_objects;
 	int						n_lights;
 	t_inter					(*intersect_fn_pointers[4])(t_ray t, t_object *i);
 	t_stats					stats;
-	t_mesh					*mesh;
 	t_light					**light;
 	t_matrix				projection;
 	t_matrix				screen_space;
@@ -59,7 +59,6 @@ void						screen_shot(t_scene *scene);
 void						transform_and_push_mesh(t_scene *scene,
 							t_obj_data *od,
 								t_affine_group *ag, t_bbox mesh_bbox);
-void						push_triangles(t_scene *scene, t_mesh *mesh);
 t_ray						generate_primary_ray(t_camera *camera,
 								double x, double y);
 void						draw_scene_bbox(t_scene *scene);

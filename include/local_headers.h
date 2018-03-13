@@ -6,13 +6,14 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 13:59:46 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/12 12:24:33 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/13 16:06:30 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __LOCAL_HEADERS_H
 # define __LOCAL_HEADERS_H
 
+# include "mesh.h"
 # include "vector.h"
 # include "matrix.h"
 # include "shapes.h"
@@ -35,7 +36,6 @@
 # include "libft.h"
 # include "window.h"
 # include "debug.h"
-# include "mesh.h"
 # include "bounding_box.h"
 # include "utility.h"
 # include "tile.h"

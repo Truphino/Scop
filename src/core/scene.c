@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:55:28 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/12 10:57:23 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/13 16:02:46 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	initialize_scene(t_scene *scene)
 	scene->n_lights = 0;
 	scene->n_objects = -1;
 	scene->flags = 0;
-	scene->mesh = new_mesh();
 	scene->light = malloc(sizeof(t_light *) * 2);
 	scene->light[0] = new_light(POINT);
 	scene->light[1] = new_light(POINT);

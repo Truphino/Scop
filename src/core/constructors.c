@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/12 10:57:18 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/13 16:01:34 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void				fetch_shape(t_object *object, int type)
 		object->shape = new_canonical_triangle();
 	if (type == CUBE)
 		object->shape = new_canonical_cube();
-	if (type == MESH)
-		object->shape = new_mesh();
 	if (type == CSG_ELEM)
 		object->shape = new_csg();
 }

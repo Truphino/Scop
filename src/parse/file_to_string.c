@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2017/02/11 09:06:45 by dgaitsgo         ###   ########.fr       */
+/*   Updated: 2018/03/13 17:30:43 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,13 @@ char		*file_to_string(const int fd)
 	char	*file_as_string;
 	char	*line;
 	int		lines;
+	int		r;
 
 	lines = 0;
+	r = 0;
 	file_as_string = malloc(sizeof(char));
 	file_as_string[0] = '\0';
-	while (get_next_line(fd, &line) > 0)
+	while ((r = get_next_line(fd, &line)) > 0)
 	{
 		if (!only_spaces(line) && !in_comments(line))
 		{

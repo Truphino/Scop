@@ -6,7 +6,7 @@
 #    By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/26 14:32:25 by dgaitsgo          #+#    #+#              #
-#    Updated: 2018/03/13 11:59:26 by trecomps         ###   ########.fr        #
+#    Updated: 2018/03/13 17:31:04 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,11 @@ OBJ_DIR = ./obs
 INC_DIR = ./include
 
 SRC_FILES = \
+./src/mesh/mesh_to_trianlges.c\
+./src/mesh/new_mesh.c\
 ./src/opengl/print_log.c\
 ./src/opengl/exec_log.c\
+./src/opengl/hello_triangle.c\
 ./src/opengl/error_log.c\
 ./src/opengl/load_shaders.c\
 ./src/opengl/init_opengl.c \
@@ -100,8 +103,6 @@ SRC_FILES = \
 ./src/matrix/rotation_matrix.c \
 ./src/matrix/screen_space.c \
 ./src/matrix/transformation_matrix.c \
-./src/mesh/mesh_to_trianlges.c \
-./src/mesh/new_mesh.c \
 ./src/parse/character_check.c \
 ./src/parse/check_flags.c \
 ./src/parse/count_words_and_length.c \
@@ -194,11 +195,11 @@ all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
 	make -C ./lib/libft
-	gcc $(FLAGS) -o $(NAME) $(OBJ_FILES) -L$(LIB_DIR) -lft -F/Library/Frameworks \
+	gcc -g $(FLAGS) -o $(NAME) $(OBJ_FILES) -L$(LIB_DIR) -lft -F/Library/Frameworks \
 		-framework SDL2 -framework OpenGL  -L./lib -lGLEW
 
 %.o:%.c $(INC_FILES)
-	gcc -c -I$(INC_DIR) $< -o $@
+	gcc -g -c -I$(INC_DIR) $< -o $@
 
 clean:
 	make -C ./lib/libft/ clean

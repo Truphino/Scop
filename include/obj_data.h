@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 11:23:41 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/03/12 10:55:11 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/13 16:07:53 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct	s_obj_data
 {
 	t_vector	*vertices;
 	t_vector	*normals;
-	int			*face_indexes;
+	t_vector	*face_indexes;
 	int			*normal_indexes;
 	int			n_normal_indexes;
 	int			n_vertices;
