@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/12 16:21:51 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/14 14:03:05 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void			put_image(t_scene *scene)
 	window = &scene->window;
 	setGlColor(window, 0, 1, 1, 1);
 
-	hello_triangle(window);
+	hello_triangle(scene);
 
 	poll_events(scene);
 }

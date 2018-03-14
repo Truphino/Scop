@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/12 10:52:53 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/13 16:06:12 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/14 14:03:55 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 typedef struct				s_scene
 {
+	t_obj_data				*od;
 	t_mesh					*mesh;
 	int						flags;
 	int						n_objects;
@@ -115,5 +116,7 @@ void						shadowing(t_vector *tmp_color,
 t_intersection				intersect_scene(t_ray ray, t_scene *scene);
 int							intersect_bbox(t_ray ray, t_bbox bbox);
 t_object					*add_object(t_scene *scene, int type);
+
+void						hello_triangle(t_scene *scene);
 
 #endif

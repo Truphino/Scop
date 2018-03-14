@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/12 10:57:49 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/14 15:32:02 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,18 @@ void	matrix_multiply(t_matrix res, t_matrix m1, t_matrix m2)
 		}
 		row++;
 	}
+}
+
+void	print_matrix(t_matrix matrix)
+{
+	int	i;
+
+	i = -1;
+	while (++i < 4)
+		printf("%f\t%f\t%f\t%f\n",
+				matrix[i][0],
+				matrix[i][1],
+				matrix[i][2],
+				matrix[i][3]
+				);
 }

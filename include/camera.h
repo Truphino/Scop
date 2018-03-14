@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/08 10:46:45 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/03/12 10:55:08 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/14 16:02:15 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct
 	int				sh_grain;
 	int				anti_aliasing;
 	t_film			film;
+
+	GLuint			uniTrans;
 }					t_camera;
 
 void				default_camera(t_camera *camera);

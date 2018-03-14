@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 14:19:09 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/14 09:45:04 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/14 16:30:30 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,55 +29,78 @@ void			print_loaded_obj(t_obj_data *obj)
 			obj->n_faces);
 	while (i < obj->n_faces)
 	{
-		printf("%f\t%f\t%f\t%f\n",
-				obj->face_indexes[i].x,
-				obj->face_indexes[i].y,
-				obj->face_indexes[i].z,
-				obj->face_indexes[i].w);
+		printf("%d\t%d\t%d\t%d\n",
+				obj->face_indexes[i * 4],
+				obj->face_indexes[(i * 4) + 1],
+				obj->face_indexes[(i * 4) + 2],
+				obj->face_indexes[(i * 4) + 3]);
 		i++;
 	}
 }
 
-void			load_object()
+t_obj_data		*load_object()
 {
 	t_obj_data	*obj;
 
 	obj = (t_obj_data *)ft_memalloc(sizeof(t_obj_data));
 	load_mesh(obj, "./object_files/42.obj");
+	triangulate_obj(obj);
 	//print_loaded_obj(obj);
+
+	return (obj);
 }
 
-void		hello_triangle(t_window *win)
+void		hello_triangle(t_scene *scene)
 {
-	load_object();
+	t_obj_data	*od;
+	float		*obj_colours;
+	t_window	*win;
+	GLfloat		gl_matrix[16];
+
+	scene->camera.transformation.translation.z -= 2;
+
+	win = &scene->window;
+	od = load_object();
+	scene->od = od;
+	obj_colours = generate_vbo(od);
 
 	float points[] = {
-	0.5f, 0.5f, 0.0f,
+	0.5f, 0.4f, 0.0f,
 	0.5f, -0.5f, 0.0f,
-	-0.5f, -0.5f, 0.0f,
+	-0.4f, -0.5f, 0.0f,
 	-0.5f, 0.5f, 0.0f,
-	0.5f, 0.5f, 0.0f,
-	-0.5f, -0.5f, 0.0f,
+	0.4f, 0.5f, 0.0f,
+	-0.5f, -0.4f, 0.0f,
 	};
 
 	float colours[] = {
 	1.0f, 1.0f,  1.0f,
+	1.0f, 1.0f,  1.0f,
+	1.0f, 1.0f,  1.0f,
 	0.0f, 0.0f,  0.0f,
-	1.0f, 1.0f,  1.0f,
 	0.0f, 0.0f,  0.0f,
-	1.0f, 1.0f,  1.0f,
-	1.0f, 1.0f,  1.0f,
+	0.0f, 0.0f,  0.0f,
 	};
 
 	GLuint point_vbo = 0;
 	glGenBuffers(1, &point_vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, point_vbo);
-	glBufferData(GL_ARRAY_BUFFER, 18 * sizeof(float), points, GL_STATIC_DRAW);
+	/*glBufferData(GL_ARRAY_BUFFER, sizeof(float) * od->n_triangle * 3,
+			od->triangle_vertices,
+			GL_STATIC_DRAW);*/
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 18,
+			points,
+			GL_STATIC_DRAW);
 
 	GLuint colours_vbo = 0;
 	glGenBuffers(1, &colours_vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, colours_vbo);
-	glBufferData(GL_ARRAY_BUFFER, 18 * sizeof(float), colours, GL_STATIC_DRAW);
+/*	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * od->n_triangle * 3,
+			obj_colours,
+			GL_STATIC_DRAW);
+*/	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 18,
+			colours,
+			GL_STATIC_DRAW);
 
 	GLuint vao = 0;
 	glGenVertexArrays(1, &vao);
@@ -109,15 +132,20 @@ void		hello_triangle(t_window *win)
 	glAttachShader(shader_programme, vs);
 	link_program_log(shader_programme);
 
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_BACK);
-	glFrontFace(GL_CW);
+//	glEnable(GL_CULL_FACE);
+//	glCullFace(GL_BACK);
+//	glFrontFace(GL_CW);
 
 	glClearColor(0.6, 0.6, 0.8, 1);
 	glClear(GL_COLOR_BUFFER_BIT);
 	glUseProgram(shader_programme);
+
+	scene->camera.uniTrans = glGetUniformLocation(shader_programme, "trans");
+	glUniformMatrix4fv(scene->camera.uniTrans, 1, GL_FALSE,
+			opengl_matrix(gl_matrix, scene->camera.inverse_view_matrix));
+
 	glBindVertexArray(vao);
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+	glDrawArrays(GL_TRIANGLES, 0, od->n_triangle);
 	SDL_GL_SwapWindow(win->window);
 
 }

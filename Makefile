@@ -6,7 +6,7 @@
 #    By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/26 14:32:25 by dgaitsgo          #+#    #+#              #
-#    Updated: 2018/03/13 17:31:04 by trecomps         ###   ########.fr        #
+#    Updated: 2018/03/14 15:27:12 by trecomps         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,9 @@ INC_DIR = ./include
 
 SRC_FILES = \
 ./src/mesh/mesh_to_trianlges.c\
+./src/matrix/opengl_matrix.c\
+./src/opengl/triangulate_object.c\
+./src/opengl/generate_vbo.c\
 ./src/mesh/new_mesh.c\
 ./src/opengl/print_log.c\
 ./src/opengl/exec_log.c\
