@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 18:16:32 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/13 16:09:29 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/14 09:44:27 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ void	transform_and_push_mesh(t_scene *scene,
 		vector_min(triangle->v0, triangle->v1));
 		mesh_bbox.max = vector_max(mesh_bbox.max,
 		vector_max(triangle->v0, triangle->v1));
-		triangle->normal =
-		unit_vector(matrix_transform_direction(
-		&od->normals[od->normal_indexes[n]],
-		ag->inverse_scale_times_rotation));
+//		triangle->normal =
+//		unit_vector(matrix_transform_direction(
+//		&od->normals[od->normal_indexes[n]],
+//		ag->inverse_scale_times_rotation));
 		i += 3;
 		n++;
 	}

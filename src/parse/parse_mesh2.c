@@ -6,7 +6,7 @@
 /*   By: dgaitsgo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/07 16:15:15 by dgaitsgo          #+#    #+#             */
-/*   Updated: 2018/03/13 17:09:33 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/14 09:49:44 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,16 +101,73 @@ void		push_obj_face_data(t_obj_data *od, char **line)
 	od->face_indexes[od->n_faces].x = atof(tokens[1]) - 1;
 	od->face_indexes[od->n_faces].y = atof(tokens[2]) - 1;
 	od->face_indexes[od->n_faces].z = atof(tokens[3]) - 1;
-	od->face_indexes[od->n_faces].w = 1.0f;
+	if (tokens[4])
+		od->face_indexes[od->n_faces].w = atof(tokens[4]) - 1;
+	else
+		od->face_indexes[od->n_faces].w = -1.0f;
 	od->n_faces += 1;
 	sub_field_tokens = ft_strsplit(tokens[1], '/');
 	normal_field = sub_field_tokens[2] == NULL ? 1 : 2;
 	normal_field = handle_no_normal_in_f(sub_field_tokens);
-	if (normal_field > 0)
+	/*if (normal_field > 0)
 		od->normal_indexes[od->n_normal_indexes] =
-			atoi(sub_field_tokens[normal_field]) - 1;
+			atof(sub_field_tokens[normal_field]) - 1;
 	else
 		od->normal_indexes[od->n_normal_indexes] = -1;
+	od->n_normal_indexes += 1;*/
+	multi_free_4(tokens[0], tokens[1], tokens[2], tokens[3]);
+	free_sub_field_token(sub_field_tokens, normal_field);
+	free(tokens);
+	free(sub_field_tokens);
+}
+
+int			load_faces_indexes(t_obj_data *od, char **tokens)
+{
+	od->face_indexes[od->n_faces].x = -1;
+	od->face_indexes[od->n_faces].y = -1;
+	od->face_indexes[od->n_faces].z = -1;
+	od->face_indexes[od->n_faces].w = -1;
+	if (tokens[1])
+	{
+		od->face_indexes[od->n_faces].x = atof(tokens[1]) - 1;
+		if (tokens[2])
+		{
+			od->face_indexes[od->n_faces].y = atof(tokens[2]) - 1;
+			if (tokens[3])
+			{
+				od->face_indexes[od->n_faces].y = atof(tokens[3]) - 1;
+				if (tokens[4])
+				{
+					od->face_indexes[od->n_faces].y = atof(tokens[4]) - 1;
+					return 4;
+				}
+				return 3;
+			}
+			return 2;
+		}
+		return 1;
+	}
+	od->n_faces++;
+	return 0;
+}
+
+void		load_normal_indexes(t_obj_data *od, char **tokens)
+{
+	
+}
+
+void		push_obj_face_data_2(t_obj_data *od, char **line)
+{
+	char	**tokens;
+	char	**sub_field_tokens;
+	int		normal_field;
+	int		i;
+
+	tokens = ft_strsplit(*line, ' ');
+	load_faces_indexes(od, tokens);
+	sub_field_tokens = ft_strsplit(tokens[1], '/');
+	normal_field = sub_field_tokens[2] == NULL ? 1 : 2;
+	normal_field = handle_no_normal_in_f(sub_field_tokens);
 	od->n_normal_indexes += 1;
 	multi_free_4(tokens[0], tokens[1], tokens[2], tokens[3]);
 	free_sub_field_token(sub_field_tokens, normal_field);
@@ -137,7 +194,7 @@ void		load_obj(t_obj_data *od, const int fd)
 		}
 		else if (line[0] == 'f')
 		{
-			push_obj_face_data(od, &line);
+			push_obj_face_data_2(od, &line);
 		}
 		free_if(line);
 	}

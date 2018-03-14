@@ -6,7 +6,7 @@
 /*   By: trecomps <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/13 14:19:09 by trecomps          #+#    #+#             */
-/*   Updated: 2018/03/13 17:08:57 by trecomps         ###   ########.fr       */
+/*   Updated: 2018/03/14 09:45:04 by trecomps         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ void			print_loaded_obj(t_obj_data *obj)
 			obj->n_faces);
 	while (i < obj->n_faces)
 	{
+		printf("%f\t%f\t%f\t%f\n",
+				obj->face_indexes[i].x,
+				obj->face_indexes[i].y,
+				obj->face_indexes[i].z,
+				obj->face_indexes[i].w);
 		i++;
 	}
 }
@@ -39,7 +44,7 @@ void			load_object()
 
 	obj = (t_obj_data *)ft_memalloc(sizeof(t_obj_data));
 	load_mesh(obj, "./object_files/42.obj");
-	print_loaded_obj(obj);
+	//print_loaded_obj(obj);
 }
 
 void		hello_triangle(t_window *win)
